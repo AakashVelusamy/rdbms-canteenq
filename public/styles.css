@@ -1,0 +1,398 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Balance Display */
+.balance-display {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.balance-display h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.balance-display span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff200;
+}
+
+.balance-display::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  50% { transform: translateX(100%) rotate(30deg); }
+  100% { transform: translateX(-100%) rotate(30deg); }
+}
+
+/* Headings */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3, h4 {
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-warning {
+  background: linear-gradient(45deg, #f1c40f, #e67e22);
+  border: none;
+  color: white;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(45deg, #e67e22, #f1c40f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  border: none;
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  border: none;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(45deg, #c0392b, #e74c3c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-sm {
+  padding: 5px 15px;
+  font-size: 0.9rem;
+}
+
+/* Forms */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  padding: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+/* Menu Items (Food Page) */
+.menu-item {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.menu-item button {
+  margin-top: 10px;
+}
+
+/* Cart Items (Food Page) */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px; /* Fixed space between + and - buttons */
+}
+
+.cart-item .button-group button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 0; /* Override previous margin */
+}
+
+/* Tables (Admin Page) */
+.table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+}
+
+.table th {
+  font-weight: 600;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+.table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+.table-striped tbody tr:hover {
+  background: #e8f4f8;
+  transition: background 0.2s ease;
+}
+
+/* Message Styling */
+#message, #error {
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#message:empty, #error:empty {
+  display: none;
+}
+
+.text-danger {
+  background: #fce4e4;
+  color: #e74c3c;
+}
+
+.text-success {
+  background: #dff0d8;
+  color: #27ae60;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container > * {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Specific Page Styling */
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 4rem !important;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+/* Logout Button */
+#logoutBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .form-control, .btn {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .menu-item, .cart-item {
+    font-size: 0.95rem;
+  }
+
+  .table th, .table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .row > div {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+
+  #logoutBtn {
+    position: static;
+    margin: 10px auto;
+    display: block;
+  }
+}
+#feedbackMessage {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+/* Dropdown Styles */
+.dropdown-toggle {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0;
+  transition: background 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background: #f0f0f0;
+}
+.dropdown-content {
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Ensure table fits nicely in dropdown */
+.dropdown-content .table {
+  margin-bottom: 0;
+}
+#clearFeedbackBtn.clear-feedback-btn {
+  margin-top: 25px !important; /* Increased specificity and !important to override mt-2 */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
